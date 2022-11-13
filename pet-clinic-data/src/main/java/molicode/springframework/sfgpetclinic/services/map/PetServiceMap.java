@@ -3,9 +3,9 @@ package molicode.springframework.sfgpetclinic.services.map;
 import java.util.Set;
 
 import molicode.springframework.sfgpetclinic.model.Pet;
-import molicode.springframework.sfgpetclinic.services.CrudService;
+import molicode.springframework.sfgpetclinic.services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
   @Override
   public Set<Pet> findAll() {

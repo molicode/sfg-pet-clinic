@@ -3,9 +3,9 @@ package molicode.springframework.sfgpetclinic.services.map;
 import java.util.Set;
 
 import molicode.springframework.sfgpetclinic.model.Owner;
-import molicode.springframework.sfgpetclinic.services.CrudService;
+import molicode.springframework.sfgpetclinic.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
   @Override
   public Set<Owner> findAll() {
@@ -33,4 +33,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     super.deleteById(id);
   }
 
+  @Override
+  public Owner findByLastName(String lastName) {
+    return null;
+  }
 }
