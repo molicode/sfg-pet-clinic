@@ -4,7 +4,9 @@ import java.util.Set;
 
 import molicode.springframework.sfgpetclinic.model.Pet;
 import molicode.springframework.sfgpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
   @Override
