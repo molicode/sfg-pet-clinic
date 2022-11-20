@@ -3,9 +3,11 @@ package molicode.springframework.sfgpetclinic.services.map;
 import java.util.Set;
 
 import molicode.springframework.sfgpetclinic.model.Speciality;
-import molicode.springframework.sfgpetclinic.services.SpecialitiesService;
+import molicode.springframework.sfgpetclinic.services.SpecialtyService;
+import org.springframework.stereotype.Service;
 
-public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialitiesService {
+@Service
+public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialtyService {
 
   @Override
   public Set<Speciality> findAll() {
