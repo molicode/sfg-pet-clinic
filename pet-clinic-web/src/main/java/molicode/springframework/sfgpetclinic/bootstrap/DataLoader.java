@@ -1,6 +1,9 @@
 package molicode.springframework.sfgpetclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import molicode.springframework.sfgpetclinic.model.Owner;
+import molicode.springframework.sfgpetclinic.model.Pet;
 import molicode.springframework.sfgpetclinic.model.PetType;
 import molicode.springframework.sfgpetclinic.model.Vet;
 import molicode.springframework.sfgpetclinic.services.OwnerService;
@@ -38,12 +41,32 @@ public class DataLoader implements CommandLineRunner {
     Owner owner1 = new Owner();
     owner1.setFirstName("Michael");
     owner1.setLastName("Weston");
+    owner1.setAddress("123 Brickerel");
+    owner1.setCity("Miami");
+    owner1.setTelephone("111111111");
+
+    Pet mikesPet = new Pet();
+    mikesPet.setPetType(savedDogPetType);
+    mikesPet.setOwner(owner1);
+    mikesPet.setBithDate(LocalDate.now());
+    mikesPet.setName("Rosco");
+    owner1.getPets().add(mikesPet);
 
     ownerService.save(owner1);
 
     Owner owner2 = new Owner();
     owner2.setFirstName("Fiona");
     owner2.setLastName("Gleananne");
+    owner2.setAddress("123 Brickerel");
+    owner2.setCity("Miami");
+    owner2.setTelephone("111111111");
+
+    Pet fionasCat = new Pet();
+    fionasCat.setPetType(savedCatPetType);
+    fionasCat.setOwner(owner2);
+    fionasCat.setBithDate(LocalDate.now());
+    fionasCat.setName("Just Cat");
+    owner2.getPets().add(fionasCat);
 
     ownerService.save(owner2);
 
