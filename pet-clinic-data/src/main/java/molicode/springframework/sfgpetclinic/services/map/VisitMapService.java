@@ -4,10 +4,12 @@ import java.util.Set;
 
 import molicode.springframework.sfgpetclinic.model.Visit;
 import molicode.springframework.sfgpetclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
+@Profile({"default", "map"})
+public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
   @Override
   public Set<Visit> findAll() {

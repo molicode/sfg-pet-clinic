@@ -6,14 +6,16 @@ import molicode.springframework.sfgpetclinic.model.Speciality;
 import molicode.springframework.sfgpetclinic.model.Vet;
 import molicode.springframework.sfgpetclinic.services.SpecialtyService;
 import molicode.springframework.sfgpetclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+@Profile({"default", "map"})
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
   private final SpecialtyService specialtyService;
 
-  public VetServiceMap(SpecialtyService specialtyService) {
+  public VetMapService(SpecialtyService specialtyService) {
     this.specialtyService = specialtyService;
   }
 
