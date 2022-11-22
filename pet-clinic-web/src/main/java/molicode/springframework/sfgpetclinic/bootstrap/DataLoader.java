@@ -7,10 +7,12 @@ import molicode.springframework.sfgpetclinic.model.Pet;
 import molicode.springframework.sfgpetclinic.model.PetType;
 import molicode.springframework.sfgpetclinic.model.Speciality;
 import molicode.springframework.sfgpetclinic.model.Vet;
+import molicode.springframework.sfgpetclinic.model.Visit;
 import molicode.springframework.sfgpetclinic.services.OwnerService;
 import molicode.springframework.sfgpetclinic.services.PetTypeService;
 import molicode.springframework.sfgpetclinic.services.SpecialtyService;
 import molicode.springframework.sfgpetclinic.services.VetService;
+import molicode.springframework.sfgpetclinic.services.VisitService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -25,11 +27,15 @@ public class DataLoader implements CommandLineRunner {
 
   private final SpecialtyService specialtyService;
 
-  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+  private final VisitService visitService;
+
+  public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService,
+      VisitService visitService) {
     this.ownerService = ownerService;
     this.vetService = vetService;
     this.petTypeService = petTypeService;
     this.specialtyService = specialtyService;
+    this.visitService = visitService;
   }
 
   @Override
@@ -104,6 +110,14 @@ public class DataLoader implements CommandLineRunner {
     owner2.getPets().add(fionasCat);
 
     ownerService.save(owner2);
+
+    Visit catVisit = new Visit();
+    catVisit.setPet(fionasCat);
+    catVisit.setDate(LocalDate.now());
+    catVisit.setDescription("Sneezy Kitty");
+
+    visitService.save(catVisit);
+
 
     System.out.println("Loaded Owners...");
 
