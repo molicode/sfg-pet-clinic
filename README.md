@@ -1,16 +1,4 @@
-# Guru
-[![CircleCI](https://circleci.com/gh/springframeworkguru/sfg-pet-clinic.svg?style=svg)](https://circleci.com/gh/springframeworkguru/sfg-pet-clinic)
-
-# Molicode 1
-
 [![CircleCI](https://circleci.com/gh/molicode/sfg-pet-clinic.svg?style=svg)](https://circleci.com/gh/molicode/sfg-pet-clinic)
-
-# Molicode Original
-
-[![CircleCI](https://dl.circleci.com/status-badge/img/null/molicode/sfg-pet-clinic/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/null/molicode/sfg-pet-clinic/tree/main)
-
-# Molicode Original sin null
-[![CircleCI](https://dl.circleci.com/status-badge/img/molicode/sfg-pet-clinic/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/molicode/sfg-pet-clinic/tree/main)
 
 
 # Spring Framework Guru Pet Clinic
